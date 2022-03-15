@@ -9,7 +9,7 @@
     <script src="{{asset('js/app.js')}}"></script>
 </head>
 <body>
-    <div class="bg-red-100">
+    <div class="bg-gray-100 w-screen h-screen" style="background-image: url('https://www.pngkey.com/png/full/48-483820_background-png-patterns-transparent-pattern-background-png.png')">
         @yield('content')
     </div>
 </body>
