@@ -19,6 +19,9 @@
                 font-family: 'Nunito', sans-serif;
             }
         </style>
+            <title>{{config('app.name')}}</title>
+            <link rel="stylesheet" href="{{asset('css/app.css')}}">
+            <script src="{{asset('js/app.js')}}"></script>
     </head>
     <body class="antialiased">
         <div class="relative flex items-top justify-center min-h-screen bg-gray-100 dark:bg-gray-900 sm:items-center py-4 sm:pt-0">
