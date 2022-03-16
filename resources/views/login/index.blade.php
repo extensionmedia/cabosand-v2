@@ -23,8 +23,8 @@
                 <div class="pt-4 relative">
                     <label class='block' htmlFor="password">Password :</label>
                     <input required placeholder='Password' class='text-sm border rounded py-2 px-2 bg-white w-full' type="password" name="password" id="password" />
-                    <i class="fas fa-eye absolute bottom-2 right-1 text-gray-400 p-1 cursor-pointer hover:text-gray-600"></i>
-                    <i class="fas fa-eye-slash absolute bottom-2 right-1 text-gray-400 p-1 cursor-pointer hover:text-gray-600"></i>
+                    <i class="pwd show fas fa-eye absolute bottom-2 right-1 text-gray-400 p-1 cursor-pointer hover:text-gray-600"></i>
+                    <i class="pwd hide hidden fas fa-eye-slash absolute bottom-2 right-1 text-gray-400 p-1 cursor-pointer hover:text-gray-600"></i>
                 </div>
                 <div class="text-right text-gray-400 py-2 cursor-pointer hover:text-gray-600">
                     Forgot password?
@@ -59,14 +59,26 @@
                         console.log(data)
                         $('.loader').addClass('hidden')
                         $('.isConnected').removeClass('hidden')
-
                     },
                     error : function(err){
-                        console.log(err)
+                        console.log(err.responseJSON.message)
                         $('.loader').addClass('hidden')
                         $('.isError').removeClass('hidden')
+                        var timer = setTimeout(() => {
+                            $('.isError').addClass('hidden')
+
+                        }, 3000);
                     }
                 })
+            })
+
+            $('.pwd').on('click', function(){
+                if($(this).hasClass('show')){
+                    $('#password').attr('type', 'text')
+                }else{
+                    $('#password').attr('type', 'password')
+                }
+                $('.pwd').toggleClass('hidden')
             })
         })
     </script>
