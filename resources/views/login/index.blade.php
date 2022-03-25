@@ -59,9 +59,10 @@
                         console.log(data)
                         $('.loader').addClass('hidden')
                         $('.isConnected').removeClass('hidden')
+                        location.reload()
                     },
                     error : function(err){
-                        console.log(err.responseJSON.message)
+                        console.log(err)
                         $('.loader').addClass('hidden')
                         $('.isError').removeClass('hidden')
                         var timer = setTimeout(() => {
