@@ -32,7 +32,14 @@
 <script>
     $(document).ready(function(){
         $('.menu-show').on('click', function(){
-            $('.menu').removeClass('hidden')
+            $('.menu_container').removeClass('hidden')
+
+            // const element = document.querySelector('.menu');
+            // element.classList.add('animate__animated', 'animate__slideInLeft');
+
+            // element.addEventListener('animationend', () => {
+            //     $('.menu').removeClass('animate__animated animate__slideInLeft')
+            // });
         })
     })
 </script>

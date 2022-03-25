@@ -16,7 +16,7 @@
     @include('admin.layout.menu')
     <div class="bg-white w-screen h-screen flex flex-col">
         @include('admin.layout.topbar')
-        <div class="flex flex-1 bg-red-200">
+        <div class="flex flex-1 px-3 bg-white">
             @yield('content')
         </div>
     </div>
