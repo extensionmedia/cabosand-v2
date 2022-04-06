@@ -19,6 +19,7 @@ Route::group([
     function(){
 
         Route::get('/', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+        Route::get('/expense', [App\Http\Controllers\ExpenseController::class, 'index'])->name('expense');
 
     }
 );

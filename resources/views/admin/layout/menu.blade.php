@@ -15,22 +15,16 @@
         </div>
 
         <div class="pt-4 px-1 flex flex-col gap-2">
-            <a href="{{route('home')}}" class="flex items-center gap-2 py-1 px-2 rounded-lg bg-white bg-opacity-80  text-gray-600">
-                <div class="menu-hide text-xl  text-center">
-                    <i class="fas fa-home"></i>
-                </div>
-                <div class="font-bold text-sm ">
-                    Dashboard
-                </div>
-            </a>
-            <a href="{{route('home')}}" class="flex items-center gap-2 py-1 px-2 rounded-lg text-white hover:bg-white hover:bg-opacity-50">
-                <div class="menu-hide text-xl  text-center">
-                    <i class="fas fa-home"></i>
-                </div>
-                <div class="text-sm ">
-                    Depenses
-                </div>
-            </a>
+            @foreach ($menu_items as $item)
+                <a href="{{$item['route']}}" class="flex items-center gap-2 py-1 px-2 rounded-lg bg-white bg-opacity-80  text-gray-600">
+                    <div class="menu-hide text-xl  text-center">
+                        {!!$item['icon']!!}
+                    </div>
+                    <div class="font-bold text-sm ">
+                        {{$item['title']}}
+                    </div>
+                </a>
+            @endforeach
         </div>
     </div>
 </div>
